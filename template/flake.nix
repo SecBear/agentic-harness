@@ -92,6 +92,18 @@
             check.enable = true;
             settings.hooks = {
               treefmt.enable = true;
+
+              # ── Security hooks (see rules/10-security-verification.md) ──
+              # Uncomment during bootstrap based on project needs.
+
+              # Secret scanning:
+              # trufflehog.enable = true;
+
+              # Dependency auditing (language-specific):
+              # cargo-audit.enable = true;     # Rust
+
+              # Static analysis:
+              # clippy.enable = true;           # Rust
             };
           };
 

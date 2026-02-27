@@ -218,8 +218,11 @@ superpowers plugin updates**. To make it durable, either fork the plugin or crea
 | `SPECS.md` | Spec index | Updated alongside specs |
 | `fix_plan.md` | Working queue (buffer, not source of truth) | Ralph (automatic) |
 | `rules/02-verification.md` | Verification commands | Bootstrap (once) |
-| `rules/07+` | Project-specific constraints | Bootstrap or you |
+| `rules/08-risk-and-escalation.md` | Risk scoring + ask-for-help triggers | Tune at bootstrap |
+| `rules/09-retry-and-failure.md` | Retry budget + circuit breaker | Tune at bootstrap |
+| `rules/10-security-verification.md` | Secret/dep/SAST scanning | Enable hooks at bootstrap |
+| `rules/11+` | Project-specific constraints | Bootstrap or you |
 | `flake.nix` | Nix dev shell, treefmt, pre-commit | Bootstrap (once) |
 | `DEVELOPMENT-LOG.md` | Decision log | You or agent |
-| `rules/01,03-06` | Generic operational rules | Stable (don't edit) |
+| `rules/01,03-07` | Generic operational rules | Stable (don't edit) |
 | `scripts/ralph.sh` | Loop runner | Stable (don't edit) |

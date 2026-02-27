@@ -25,14 +25,16 @@ You are an autonomous coding agent operating in this repository.
    - write a failing test
    - implement minimal code
    - refactor after green
-5. Run the verification commands defined in `rules/02-verification.md`.
-6. If verification fails, fix it before moving on.
-7. Commit. Use a conventional commit title.
-8. Mark the item `[x]` in `fix_plan.md`.
-9. Mark the corresponding spec Status item `[x]` if it is now satisfied.
-10. If implementation revealed follow-up work, add new `[ ]` items to `fix_plan.md` at the
+5. Assess risk per `rules/08-risk-and-escalation.md`. If high risk, escalate instead of committing.
+6. Run the verification commands defined in `rules/02-verification.md`.
+7. If verification fails, retry per `rules/09-retry-and-failure.md` (max 3 attempts, then mark
+   blocked and move on).
+8. Commit. Use a conventional commit title.
+9. Mark the item `[x]` in `fix_plan.md`.
+10. Mark the corresponding spec Status item `[x]` if it is now satisfied.
+11. If implementation revealed follow-up work, add new `[ ]` items to `fix_plan.md` at the
     appropriate priority position. Link each to its governing spec.
-11. Commit the `fix_plan.md` and spec updates.
+12. Commit the `fix_plan.md` and spec updates.
 
 ## Queue Empty — Refill From Specs
 

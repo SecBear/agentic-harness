@@ -74,7 +74,15 @@ If the project has constraints that agents need to follow, add rules in `rules/`
 - Platform constraints ("must work on both Linux and macOS")
 
 Only add rules for real constraints you find in the project. Do not invent hypothetical rules.
-Number them starting from `07-`.
+Number them starting from `11-`.
+
+Rules 08 (risk and escalation), 09 (retry and failure), and 10 (security verification) are
+already included in the template. Review them during bootstrap:
+
+- `rules/08-risk-and-escalation.md` — tune the risk indicators for the project's domain.
+- `rules/09-retry-and-failure.md` — adjust the retry budget if needed (default: 3 attempts).
+- `rules/10-security-verification.md` — enable the security pre-commit hooks in `flake.nix`
+  that match the project's language (trufflehog, cargo-audit, clippy, etc.).
 
 ### 5. Write initial specs
 
