@@ -13,7 +13,7 @@
 
           Next steps:
 
-            1. Enter the dev shell:    nix develop
+            1. Allow direnv:           direnv allow
             2. Bootstrap the harness:  cat BOOTSTRAP.md | claude-code
             3. Write specs:            claude-code  (describe what you want to build)
             4. Run the loop:           ./scripts/ralph.sh

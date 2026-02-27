@@ -9,7 +9,7 @@ loop (Ralph) implements one task per iteration with TDD and backpressure from Ni
 ```bash
 mkdir my-project && cd my-project && git init
 nix flake init -t github:SecBear/agentic-harness
-nix develop
+direnv allow
 cat BOOTSTRAP.md | claude-code
 ```
 
@@ -32,6 +32,7 @@ fills in verification commands, and writes initial specs.
 ## What You Get
 
 ```
+├── .envrc              direnv hook (use flake)
 ├── AGENTS.md           Agent operating instructions (stable)
 ├── BOOTSTRAP.md        One-time setup prompt (stable)
 ├── CLAUDE.md           Points agents at AGENTS.md (stable)
