@@ -164,15 +164,24 @@ create new spec files. Then ralph again.
 
 ## Installing Into an Existing Repo
 
-To add the agentic harness to a project, `cd` into that project's repo and pipe this prompt into
-your agent:
+To add the agentic harness to an existing project:
 
 ```bash
-echo 'Clone https://github.com/SecBear/agentic-harness into a temp directory. Copy all harness files into the current repo root: AGENTS.md, BOOTSTRAP.md, CLAUDE.md, HUMAN.md, PROMPT.md, SPECS.md, DEVELOPMENT-LOG.md, fix_plan.md, flake.nix, specs/, rules/, scripts/, and .gitignore. Do not overwrite any existing CLAUDE.md — instead append "@AGENTS.md" to it. If a flake.nix already exists, keep it and rename the harness one to flake.harness.nix so you can merge them during bootstrap. Remove the temp directory when done. Then follow BOOTSTRAP.md to configure everything for this project.' | claude-code
+cd your-project
+nix flake init -t github:SecBear/agentic-harness
 ```
 
-This clones the template, copies the structure in, and kicks off the bootstrap process which
-configures the nix flake, verification commands, and initial specs for your project.
+This copies the full harness structure into your repo. If you already have a `flake.nix`, Nix will
+warn you about the conflict — rename your existing one first (`mv flake.nix flake.project.nix`)
+and merge the harness flake features (treefmt, git-hooks) into your project flake during bootstrap.
+
+If you already have a `CLAUDE.md`, append `@AGENTS.md` to it so agents discover the harness.
+
+Then bootstrap:
+
+```bash
+cat BOOTSTRAP.md | claude-code
+```
 
 ---
 
