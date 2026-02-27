@@ -81,6 +81,9 @@ changed and where to look.
 3. Do not add new public surface area without updating specs.
 4. Do not implement something that contradicts a spec. If the spec is wrong, update the spec first.
 5. Do not invent new requirements. Only implement what the specs define.
+6. Do not invoke superpowers skills (brainstorming, TDD, debugging, writing-plans, etc.) during
+   the Ralph loop. This loop has its own TDD, verification, and commit discipline defined in
+   `rules/`. Superpowers skills are for interactive sessions, not the autonomous loop.
 
 ## Invocation (Human Runs This)
 
