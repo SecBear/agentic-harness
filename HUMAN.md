@@ -176,6 +176,26 @@ configures the nix flake, verification commands, and initial specs for your proj
 
 ---
 
+## Superpowers Skills Compatibility
+
+If you use the [superpowers](https://github.com/anthropics/claude-plugins-official/tree/main/superpowers)
+plugin with Claude Code, be aware of how it interacts with this harness:
+
+**During the Ralph loop:** Superpowers skills are disabled. `PROMPT.md` rule #6 tells the agent
+not to invoke them. The loop has its own TDD, verification, and commit discipline via `rules/`,
+and superpowers skills would add conflicting control flow and context bloat.
+
+**During interactive sessions** (speccing, reviewing, ad-hoc work): Superpowers skills are active
+and useful. The brainstorming skill in particular pairs well with the Spec phase.
+
+**Brainstorming + parallel MCP:** The brainstorming skill has been patched to use the
+`parallel:parallel-web-search` and `parallel:parallel-web-extract` MCP tools for researching
+prior art and comparing technical approaches during design. This edit lives in the plugin cache
+(`~/.claude/plugins/cache/.../brainstorming/SKILL.md`) and **will be overwritten if the
+superpowers plugin updates**. To make it durable, either fork the plugin or create a custom skill.
+
+---
+
 ## File Reference
 
 | File | What it is | Who writes it |
